@@ -1,0 +1,173 @@
+/* --- FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Tenor+Sans&display=swap');
+
+/* --- RESET GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+}
+
+/* --- LAYOUT PRINCIPAL (DIVISÃO DA TELA) --- */
+.apresentacao {
+    display: flex;
+    max-height: 105vh; /* Ocupa 100% da altura da tela */
+}
+
+.lado_esquerdo,
+.lado_direito {
+    flex: 1; /* Divide a tela exatamente em 50% para cada lado */
+    display: flex;
+    flex-direction: column;
+}
+
+/* LADO ESQUERDO*/
+.lado_esquerdo {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#imagem_principal {
+    width: 100%;
+    height: 45vh; /* Faz a foto ocupar quase metade da altura do lado esquerdo */
+    object-fit: cover; /* Evita que a foto fique esticada/deformada */
+}
+
+.lado_esquerdo_escrita {
+    padding: 8% 12%; /* Espaçamento interno (respiro) */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nome_titulo {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 3.2rem; /* Tamanho grande conforme o design */
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.botao_email {
+    background-color: #000000; /* Fundo preto */
+    width: 260px;
+    align-self: center;
+    color: #ffffff; /* Texto branco */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    padding: 15px 40px;
+    display: inline-block; /* Fundamental para que o link respeite o padding e o tamanho */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.botao_email:hover {
+    background-color: #aa8c77; /* Fica com a cor marrom do fundo */
+    color: #000000; /* Texto fica preto */
+    border: 1px solid #000000; /* Adiciona uma borda preta para não sumir */
+}
+
+/*LADO DIREITO*/
+.lado_direito {
+    background-color: #aa8c77; /* Cor marrom acinzentada fiel à imagem */
+    color: #1a1a1a;
+    position: relative; /* Necessário para prender os ícones no canto inferior */
+}
+
+.ld_conteudo {
+    padding: 15% 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sobre_titulo {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    border-bottom: 1px solid #1a1a1a; /* Cria a linha preta abaixo do título */
+    padding-bottom: 15px; /* Espaço entre o texto do título e a linha */
+}
+
+.sobre_texto {
+    font-size: 1.05rem;
+    line-height: 1.6; /* Espaçamento entre as linhas para facilitar a leitura */
+    font-weight: 400;
+}
+
+/* --- BOTÕES (Tecnologias e Projetos) --- */
+.botoes_link {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.linksd {
+    background-color: transparent;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 40px;
+    border: 1px solid #000000;
+    transition: all 0.3s ease; /* Animação suave no hover */
+}
+
+.linksd:hover {
+    background-color: #000000;
+    color: #aa8c77;
+    cursor: pointer;
+}
+
+/* --- REDES SOCIAIS (Canto inferior direito) --- */
+.redes_sociais {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* 1. ESTADO NORMAL (A Base) */
+.imagens_sociais {
+    width: 34px;
+    transition: transform 0.3s ease; 
+}
+
+/* 2. ESTADO HOVER (A Ação) */
+.imagens_sociais:hover {
+    transform: scale(1.1); 
+}
+
+
+/* =========================================
+   RESPONSIVIDADE (Para Celulares)
+   ========================================= */
+@media (max-width: 768px) {
+    .apresentacao {
+        flex-direction: column; /* Coloca um bloco embaixo do outro no celular */
+    }
+    
+    #imagem_principal {
+        height: auto;
+    }
+    
+    .redes_sociais {
+        position: static; /* Tira o posicionamento absoluto no celular */
+        margin-top: 30px;
+        justify-content: flex-end;
+    }
+}
